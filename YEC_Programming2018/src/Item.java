@@ -3,13 +3,13 @@ public class Item {
 
 	public double price;
 	public String name;
-	public String ImageURL;
-	public String Desription;
+	public String imageURL;
+	public String description;
 
 	public Item() {
 		price = 0;
 		name = "";	
-		ImageURL = "";
-		Object Description = null;
+		imageURL = "";
+	    description = "";
 	}
 }
