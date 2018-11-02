@@ -8,8 +8,8 @@ public class Item {
 
 	public Item() {
 		price = 0;
-		name = null;
-		ImageURL = null;
+		name = "";
+		ImageURL = "";
 		Object Description = null;
 	}
 }
