@@ -7,7 +7,7 @@ public class Store {
 	public String slogan;
 	public ArrayList<Item> itemList;
 	public ArrayList<Link> linkList;
-	
+	//public int storeID;
 	
 	
 	
