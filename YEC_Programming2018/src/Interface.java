@@ -11,7 +11,6 @@ public class Interface extends JFrame {
 		setContentPane(mainPanel);
 	}
 	
-	
 
 	public static void main(String []args) {
 		Interface ex = new Interface();

@@ -1,4 +1,3 @@
-
 public class Link {
 
 	public String url;
