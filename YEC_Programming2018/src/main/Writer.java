@@ -1,3 +1,4 @@
+package main;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -5,12 +6,12 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class FileReader {
+public class Writer {
 
 	private String path;
 	private boolean append = false;
 	
-	public FileReader (String filePath, boolean appendVal)
+	public Writer (String filePath, boolean appendVal)
 	{
 		path = filePath;
 		append = appendVal;
