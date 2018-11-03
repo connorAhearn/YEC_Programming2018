@@ -30,7 +30,19 @@ public class JSAC {
 		addProducts();
 		frame.getContentPane().add(Box.createRigidArea(new Dimension(0,5)));
 		addLinks();
+		addPublish();
 		display();
+	}
+	
+	private void addPublish() {
+		JButton b1 = new JButton("Publish");
+		
+		
+		GridBagConstraints boxCon = new GridBagConstraints();
+		boxCon.insets = new Insets(5, 5, 5, 5);
+		boxCon.gridx = 0;
+		boxCon.gridy = 4;
+		frame.getContentPane().add(b1, boxCon);
 	}
 	
 	private void addProducts() {
@@ -92,9 +104,9 @@ public class JSAC {
 	private void setUpFrame() {
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[] { 200 };
-		gridBagLayout.rowHeights = new int[] { 50, 50, 50 };
+		gridBagLayout.rowHeights = new int[] { 50, 50, 50, 50 };
 		gridBagLayout.columnWeights = new double[] { 1.0 };
-		gridBagLayout.rowWeights = new double[] { Double.MIN_VALUE, 1.0, 1.0 };
+		gridBagLayout.rowWeights = new double[] { Double.MIN_VALUE, 1.0, 1.0, 1.0 };
 		
 		frame = new JFrame("JSAC");
 		frame.setResizable(true);
