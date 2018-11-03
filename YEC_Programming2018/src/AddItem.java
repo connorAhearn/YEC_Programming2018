@@ -1,12 +1,9 @@
+
 //Source:https://docs.oracle.com/javase/tutorial/displayCode.html?code=https://docs.oracle.com/javase/tutorial/uiswing/examples/layout/SpringFormProject/src/layout/SpringForm.java
 
 import java.awt.Color;
-import java.awt.Component;
-import java.awt.Container;
-import java.awt.LayoutManager;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.SpringLayout;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
@@ -16,22 +13,18 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class AddItem {
-	private JFrame frame;
 	private JTextField textField1;
 	private JTextField textField2;
 	private JTextField textField3;
 	private JTextField textField4;
-	private Item i; 
-	public AddItem() {
+	private Item i;
+	private Store store;
+
+	public AddItem(Store s) {
 		createGUI();
+		store = s;
 	}
 
-	private void setUpFrame() {
-		frame = new JFrame("JSAC");
-		frame.setResizable(true);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setBackground(new Color(217, 217, 217));
-	}
 
 	public void createGUI() {
 		String[] labels = { "Name: ", "Price: ", "ImageURL: ", "Description: " };
@@ -67,11 +60,19 @@ public class AddItem {
 		p.add(textField4);
 
 		JButton button = new JButton("Add");
+		JLabel label = new JLabel("");
 		button.addActionListener(new ActionListener() {
-		    public void actionPerformed(ActionEvent e) {
-		    	i= new Item(textField2.getText(),textField1.getText(),textField3.getText(),textField4.getText());
-		    }
+			public void actionPerformed(ActionEvent e) {
+				i = new Item(textField2.getText(), textField1.getText(), textField3.getText(), textField4.getText());
+				label.setText(textField1.getText() + " has been added.");
+				store.itemList.add(i);
+				textField1.setText("");
+				textField2.setText("");
+				textField3.setText("");
+				textField4.setText("");
+			}
 		});
+		add.add(label);
 		add.add(button);
 
 		box.add(p);
@@ -85,11 +86,9 @@ public class AddItem {
 		p.setOpaque(true); // content panes must be opaque
 		frame.setContentPane(box);
 
-		
 		// Display the window.
-		frame.pack();
+		frame.setSize(500,200);;
 		frame.setVisible(true);
-		
-		
+
 	}
 }
