@@ -155,9 +155,17 @@ a {
                 <img src="${PRODUCT_i_IMAGE}" alt="">
                 <h3>${PRODUCT_i_NAME}</h3>
                 <p>${PRODUCT_i_DESC}</p>
+                <button>Purchase</button>
             </div>
         </div>
     </div>
+    <script>
+        for(let i = 0; i < NUM; i++) 
+            document.getElementById("price" + i).addEventListener("click", () => {
+                console.log("Price: " + document.getElementById("price" + i).innerHTML);
+                let CC = prompt("Please enter your credit card number: ", "");
+            });
+    </script>
 </body>
 
 </html>

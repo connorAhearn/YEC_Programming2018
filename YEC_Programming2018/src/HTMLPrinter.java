@@ -1,3 +1,5 @@
+import java.io.IOException;
+
 class HTMLPrinter {
 
     FileReader writer = new FileReader("output.HTML", false);
@@ -34,10 +36,16 @@ class HTMLPrinter {
                 + store.itemList.get(i).name
                 + "</h3><p>"
                 + store.itemList.get(i).Description
-                + "<h5>" + store.itemList.get(i).price + "</h5>"
-                + "</p></div>";
+                + "<h5 id=\"price" + i + "\">" + store.itemList.get(i).price + "</h5>"
+                + "</p><button id=\"price" + i + "\">Purchase</button></div>";
         }
 
-        fileContents += "</div></div></body></html>";
+        fileContents += "</div></div><script>for(let i = 0; i < " 
+                + store.itemList.size() 
+                + "; i++) document.getElementById(\"price\" + i).addEventListener(\"click\", () => { console.log(\"Price: \" + document.getElementById(\"price\" + i).innerHTML);  let CC = prompt(\"Please enter your credit card number: \", \"\"); }); </script></body></html>";
+    }
+
+    void print() throws IOException {
+        writer.write(fileContents);
     }
 }
