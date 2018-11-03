@@ -17,6 +17,14 @@ public class Store {
 		itemList = new ArrayList<Item>();
 		linkList = new ArrayList<Link>();
 	}
+
+	//USE THIS CONSTRUCTOR
+	public Store(String name, String slogan) {
+		storeName = name;
+		this.slogan = slogan;
+		itemList = new ArrayList<Item>();
+		linkList = new ArrayList<Link>();
+	}
 	
 	public Store(String storeName, ArrayList<Item> itemList, ArrayList<Link> linkList) {
 		this.storeName = storeName;
