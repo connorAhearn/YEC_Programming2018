@@ -45,7 +45,7 @@ public class AddLink {
 		JButton button = new JButton("Add");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				l=new Link(textField1.getText(),textField2.getSelectedText()); 
+				l=new Link(textField2.getText(), textField1.getText()); 
 				label.setText(textField1.getText() + " has been added.");
 				store.linkList.add(l);
 				textField1.setText("");
