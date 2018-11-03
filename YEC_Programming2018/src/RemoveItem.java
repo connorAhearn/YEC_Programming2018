@@ -7,6 +7,7 @@ import java.text.SimpleDateFormat;
 
 //source:https://docs.oracle.com/javase/tutorial/displayCode.html?code=https://docs.oracle.com/javase/tutorial/uiswing/examples/components/ComboBoxDemo2Project/src/components/ComboBoxDemo2.java
 public class RemoveItem {
+	JFrame frame;
 	String currentPattern;
 	JLabel result;
 	int currentSel;
@@ -26,7 +27,6 @@ public class RemoveItem {
 		currentSel = 0;
 
 		JComboBox patternList = new JComboBox(patternExamples);
-		patternList.setEditable(true);
 		patternList.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				currentPattern = patternList.getName();
@@ -39,11 +39,13 @@ public class RemoveItem {
 		remove.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				s.itemList.remove(currentSel);
+				frame.dispose();
 			}
 		});
 		
-		JFrame frame = new JFrame("Remove Item");
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame = new JFrame("Remove Item");
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		frame.getContentPane().setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.Y_AXIS));
 		frame.getContentPane().add(patternList);
 		frame.getContentPane().add(remove);
 

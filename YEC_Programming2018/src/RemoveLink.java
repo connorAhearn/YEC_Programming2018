@@ -41,11 +41,13 @@ public class RemoveLink {
 		remove.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				s.linkList.remove(currentSel);
+				frame.dispose();
 			}
 		});
 		
-		JFrame frame = new JFrame("Remove Link");
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame = new JFrame("Remove Link");
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		frame.getContentPane().setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.Y_AXIS));
 		frame.getContentPane().add(patternList);
 		frame.getContentPane().add(remove);
 
