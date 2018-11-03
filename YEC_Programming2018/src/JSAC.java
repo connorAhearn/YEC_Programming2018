@@ -74,8 +74,8 @@ public class JSAC {
 	
 	private void setUpFrame() {
 		GridBagLayout gridBagLayout = new GridBagLayout();
-		gridBagLayout.columnWidths = new int[] { 500 };
-		gridBagLayout.rowHeights = new int[] { 300, 200, 200 };
+		gridBagLayout.columnWidths = new int[] { 200 };
+		gridBagLayout.rowHeights = new int[] { 50, 50, 50 };
 		gridBagLayout.columnWeights = new double[] { 1.0 };
 		gridBagLayout.rowWeights = new double[] { Double.MIN_VALUE, 1.0, 1.0 };
 		
