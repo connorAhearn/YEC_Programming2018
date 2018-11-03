@@ -1,6 +1,9 @@
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -38,8 +41,11 @@ public class JSAC {
 		buttons.add(b2);
 		box.add(products);
 		box.add(buttons);
-		box.setAlignmentX(Component.LEFT_ALIGNMENT);
-		frame.getContentPane().add(box);
+		GridBagConstraints boxCon = new GridBagConstraints();
+		boxCon.insets = new Insets(5, 5, 5, 5);
+		boxCon.gridx = 0;
+		boxCon.gridy = 1;
+		frame.getContentPane().add(box, boxCon);
 	}
 	
 	private void addLinks() {
@@ -54,8 +60,11 @@ public class JSAC {
 		buttons.add(b2);
 		box.add(products);
 		box.add(buttons);
-		box.setAlignmentX(Component.LEFT_ALIGNMENT);
-		frame.getContentPane().add(box);
+		GridBagConstraints boxCon = new GridBagConstraints();
+		boxCon.insets = new Insets(5, 5, 5, 5);
+		boxCon.gridx = 0;
+		boxCon.gridy = 2;
+		frame.getContentPane().add(box, boxCon);
 	}
 	
 	private void display() {
@@ -64,11 +73,17 @@ public class JSAC {
 	}
 	
 	private void setUpFrame() {
+		GridBagLayout gridBagLayout = new GridBagLayout();
+		gridBagLayout.columnWidths = new int[] { 500 };
+		gridBagLayout.rowHeights = new int[] { 300, 200, 200 };
+		gridBagLayout.columnWeights = new double[] { 1.0 };
+		gridBagLayout.rowWeights = new double[] { Double.MIN_VALUE, 1.0, 1.0 };
+		
 		frame = new JFrame("JSAC");
 		frame.setResizable(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setBackground(new Color(217, 217, 217));
-		frame.getContentPane().setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.Y_AXIS));
+		frame.getContentPane().setLayout(gridBagLayout);
 	}
 	
 	private void addStoreData() {
@@ -96,8 +111,12 @@ public class JSAC {
 		spring.setOpaque(true);
 		JPanel name = new JPanel();
 		JPanel slogan = new JPanel();
-		spring.setAlignmentX(Component.LEFT_ALIGNMENT);
-		frame.getContentPane().add(spring);
+		
+		GridBagConstraints springCon = new GridBagConstraints();
+		springCon.insets = new Insets(5, 5, 5, 5);
+		springCon.gridx = 0;
+		springCon.gridy = 0;
+		frame.getContentPane().add(spring, springCon);
 	}
 }
 
