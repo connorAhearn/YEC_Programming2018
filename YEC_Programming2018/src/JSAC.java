@@ -71,6 +71,11 @@ public class JSAC {
 				AddItem i = new AddItem(store);
 			}
 		});
+		b2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				RemoveItem i = new RemoveItem(store);
+			}
+		});
 		JLabel products = new JLabel("Products");
 		buttons.add(b1);
 		buttons.add(b2);
@@ -100,6 +105,11 @@ public class JSAC {
 		});
 		
 		buttons.add(b2);
+		b2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				RemoveLink i = new RemoveLink(store);
+			}
+		});
 		products.setAlignmentX(Box.LEFT_ALIGNMENT);
 		box.add(products);
 		box.add(buttons);

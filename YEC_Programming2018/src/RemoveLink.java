@@ -12,6 +12,10 @@ public class RemoveLink {
 	JLabel result;
 	int currentSel;
 	
+	public RemoveLink(Store s) {
+		createGUI(s);
+	}
+	
 	public void createGUI(Store s) {
 		JPanel box = new JPanel();
 		box.setLayout(new BoxLayout(box, BoxLayout.Y_AXIS));
