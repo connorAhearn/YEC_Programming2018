@@ -1,7 +1,10 @@
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.Dimension;
 
+import javax.swing.Box;
 import javax.swing.BoxLayout;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -14,7 +17,39 @@ public class JSAC {
 	public JSAC() {
 		setUpFrame();
 		addStoreData();
+		frame.getContentPane().add(Box.createRigidArea(new Dimension(0,5)));
+		addProducts();
+		frame.getContentPane().add(Box.createRigidArea(new Dimension(0,5)));
+		addLinks();
 		display();
+	}
+	
+	private void addProducts() {
+		JPanel box = new JPanel();
+		box.setLayout(new BoxLayout(box, BoxLayout.Y_AXIS));
+		JPanel buttons = new JPanel();
+		buttons.setLayout(new BoxLayout(buttons, BoxLayout.X_AXIS));
+		JButton b1 = new JButton("ADD");
+		JButton b2 = new JButton("Remove");
+		JLabel products = new JLabel("Products");
+		buttons.add(b1);
+		buttons.add(b2);
+		box.add(products);
+		box.add(buttons);
+	}
+	
+	private void addLinks() {
+		JPanel box = new JPanel();
+		box.setLayout(new BoxLayout(box, BoxLayout.Y_AXIS));
+		JPanel buttons = new JPanel();
+		buttons.setLayout(new BoxLayout(buttons, BoxLayout.X_AXIS));
+		JButton b1 = new JButton("ADD");
+		JButton b2 = new JButton("Remove");
+		JLabel products = new JLabel("Links");
+		buttons.add(b1);
+		buttons.add(b2);
+		box.add(products);
+		box.add(buttons);
 	}
 	
 	private void display() {
