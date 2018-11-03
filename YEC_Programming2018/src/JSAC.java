@@ -80,15 +80,13 @@ public class JSAC {
         JLabel l2 = new JLabel(fields[1], JLabel.TRAILING);
         
         spring.add(l1);
-        spring.add(l2);
-        
         tf1 = new JTextField(10);
-        tf2 = new JTextField(10);
-        
         l1.setLabelFor(tf1);
-        l2.setLabelFor(tf2);
-        
         spring.add(tf1);
+        
+        spring.add(l2);
+        tf2 = new JTextField(10);
+        l2.setLabelFor(tf2);
         spring.add(tf2);
         
         SpringUtilities.makeCompactGrid(spring,
