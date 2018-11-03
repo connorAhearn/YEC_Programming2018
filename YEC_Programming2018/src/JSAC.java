@@ -14,6 +14,12 @@ public class JSAC {
 	public JSAC() {
 		setUpFrame();
 		addStoreData();
+		display();
+	}
+	
+	private void display() {
+		frame.pack();
+		frame.setVisible(true);
 	}
 	
 	private void setUpFrame() {
