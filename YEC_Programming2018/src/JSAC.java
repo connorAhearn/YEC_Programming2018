@@ -13,6 +13,8 @@ import javax.swing.SpringLayout;
 
 public class JSAC {
 	private JFrame frame;
+	private JTextField tf1;
+	private JTextField tf2;
 	
 	public JSAC() {
 		setUpFrame();
@@ -36,6 +38,7 @@ public class JSAC {
 		buttons.add(b2);
 		box.add(products);
 		box.add(buttons);
+		box.setAlignmentX(Component.LEFT_ALIGNMENT);
 		frame.getContentPane().add(box);
 	}
 	
@@ -51,6 +54,7 @@ public class JSAC {
 		buttons.add(b2);
 		box.add(products);
 		box.add(buttons);
+		box.setAlignmentX(Component.LEFT_ALIGNMENT);
 		frame.getContentPane().add(box);
 	}
 	
@@ -71,13 +75,21 @@ public class JSAC {
 		String[] fields = {"Store Name: ", "Slogan (optional): "};
 		
 		JPanel spring = new JPanel(new SpringLayout());
-        for (int i = 0; i < fields.length; i++) {
-            JLabel l = new JLabel(fields[i], JLabel.TRAILING);
-            spring.add(l);
-            JTextField textField = new JTextField(10);
-            l.setLabelFor(textField);
-            spring.add(textField);
-        }
+		
+        JLabel l1 = new JLabel(fields[0], JLabel.TRAILING);
+        JLabel l2 = new JLabel(fields[1], JLabel.TRAILING);
+        
+        spring.add(l1);
+        spring.add(l2);
+        
+        tf1 = new JTextField(10);
+        tf2 = new JTextField(10);
+        
+        l1.setLabelFor(tf1);
+        l2.setLabelFor(tf2);
+        
+        spring.add(tf1);
+        spring.add(tf2);
         
         SpringUtilities.makeCompactGrid(spring,
 		                fields.length, 2, //rows, cols
