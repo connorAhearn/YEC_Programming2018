@@ -36,6 +36,7 @@ public class JSAC {
 		buttons.add(b2);
 		box.add(products);
 		box.add(buttons);
+		frame.getContentPane().add(box);
 	}
 	
 	private void addLinks() {
@@ -50,6 +51,7 @@ public class JSAC {
 		buttons.add(b2);
 		box.add(products);
 		box.add(buttons);
+		frame.getContentPane().add(box);
 	}
 	
 	private void display() {
