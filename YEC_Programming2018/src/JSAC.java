@@ -1,7 +1,10 @@
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.Dimension;
 
+import javax.swing.Box;
 import javax.swing.BoxLayout;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -10,11 +13,49 @@ import javax.swing.SpringLayout;
 
 public class JSAC {
 	private JFrame frame;
+	private JTextField tf1;
+	private JTextField tf2;
 	
 	public JSAC() {
 		setUpFrame();
 		addStoreData();
+		frame.getContentPane().add(Box.createRigidArea(new Dimension(0,5)));
+		addProducts();
+		frame.getContentPane().add(Box.createRigidArea(new Dimension(0,5)));
+		addLinks();
 		display();
+	}
+	
+	private void addProducts() {
+		JPanel box = new JPanel();
+		box.setLayout(new BoxLayout(box, BoxLayout.Y_AXIS));
+		JPanel buttons = new JPanel();
+		buttons.setLayout(new BoxLayout(buttons, BoxLayout.X_AXIS));
+		JButton b1 = new JButton("ADD");
+		JButton b2 = new JButton("Remove");
+		JLabel products = new JLabel("Products");
+		buttons.add(b1);
+		buttons.add(b2);
+		box.add(products);
+		box.add(buttons);
+		box.setAlignmentX(Component.LEFT_ALIGNMENT);
+		frame.getContentPane().add(box);
+	}
+	
+	private void addLinks() {
+		JPanel box = new JPanel();
+		box.setLayout(new BoxLayout(box, BoxLayout.Y_AXIS));
+		JPanel buttons = new JPanel();
+		buttons.setLayout(new BoxLayout(buttons, BoxLayout.X_AXIS));
+		JButton b1 = new JButton("ADD");
+		JButton b2 = new JButton("Remove");
+		JLabel products = new JLabel("Links");
+		buttons.add(b1);
+		buttons.add(b2);
+		box.add(products);
+		box.add(buttons);
+		box.setAlignmentX(Component.LEFT_ALIGNMENT);
+		frame.getContentPane().add(box);
 	}
 	
 	private void display() {
@@ -34,13 +75,21 @@ public class JSAC {
 		String[] fields = {"Store Name: ", "Slogan (optional): "};
 		
 		JPanel spring = new JPanel(new SpringLayout());
-        for (int i = 0; i < fields.length; i++) {
-            JLabel l = new JLabel(fields[i], JLabel.TRAILING);
-            spring.add(l);
-            JTextField textField = new JTextField(10);
-            l.setLabelFor(textField);
-            spring.add(textField);
-        }
+		
+        JLabel l1 = new JLabel(fields[0], JLabel.TRAILING);
+        JLabel l2 = new JLabel(fields[1], JLabel.TRAILING);
+        
+        spring.add(l1);
+        spring.add(l2);
+        
+        tf1 = new JTextField(10);
+        tf2 = new JTextField(10);
+        
+        l1.setLabelFor(tf1);
+        l2.setLabelFor(tf2);
+        
+        spring.add(tf1);
+        spring.add(tf2);
         
         SpringUtilities.makeCompactGrid(spring,
 		                fields.length, 2, //rows, cols
