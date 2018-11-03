@@ -4,6 +4,8 @@ import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -18,8 +20,10 @@ public class JSAC {
 	private JFrame frame;
 	private JTextField tf1;
 	private JTextField tf2;
+	private Store store;
 	
 	public JSAC() {
+		store = new Store();
 		setUpFrame();
 		addStoreData();
 		frame.getContentPane().add(Box.createRigidArea(new Dimension(0,5)));
@@ -36,6 +40,11 @@ public class JSAC {
 		buttons.setLayout(new BoxLayout(buttons, BoxLayout.X_AXIS));
 		JButton b1 = new JButton("ADD");
 		JButton b2 = new JButton("Remove");
+		b1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				AddItem i = new AddItem(store);
+			}
+		});
 		JLabel products = new JLabel("Products");
 		buttons.add(b1);
 		buttons.add(b2);
@@ -58,6 +67,12 @@ public class JSAC {
 		JButton b2 = new JButton("Remove");
 		JLabel products = new JLabel("Links");
 		buttons.add(b1);
+		b1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				AddLink i = new AddLink(store);
+			}
+		});
+		
 		buttons.add(b2);
 		products.setAlignmentX(Box.LEFT_ALIGNMENT);
 		box.add(products);
