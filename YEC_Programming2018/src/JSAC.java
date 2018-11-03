@@ -39,6 +39,7 @@ public class JSAC {
 		JLabel products = new JLabel("Products");
 		buttons.add(b1);
 		buttons.add(b2);
+		products.setAlignmentX(Box.LEFT_ALIGNMENT);
 		box.add(products);
 		box.add(buttons);
 		GridBagConstraints boxCon = new GridBagConstraints();
@@ -58,6 +59,7 @@ public class JSAC {
 		JLabel products = new JLabel("Links");
 		buttons.add(b1);
 		buttons.add(b2);
+		products.setAlignmentX(Box.LEFT_ALIGNMENT);
 		box.add(products);
 		box.add(buttons);
 		GridBagConstraints boxCon = new GridBagConstraints();
@@ -82,7 +84,6 @@ public class JSAC {
 		frame = new JFrame("JSAC");
 		frame.setResizable(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setBackground(new Color(217, 217, 217));
 		frame.getContentPane().setLayout(gridBagLayout);
 	}
 	
