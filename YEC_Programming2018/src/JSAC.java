@@ -12,6 +12,7 @@ import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
@@ -36,7 +37,20 @@ public class JSAC {
 	
 	private void addPublish() {
 		JButton b1 = new JButton("Publish");
-		
+		b1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				int option = JOptionPane.showConfirmDialog(
+					    null,
+					    "This will finalize your product, have you added all products and links needed?\nWould you like to continue?",
+					    "HI",
+					    JOptionPane.YES_NO_OPTION);
+				if (option == JOptionPane.YES_OPTION) {
+					store.storeName = tf1.getText();
+					store.slogan = tf2.getText();
+					HTMLPrinter p = new HTMLPrinter(store);
+				}
+			}
+		});
 		
 		GridBagConstraints boxCon = new GridBagConstraints();
 		boxCon.insets = new Insets(5, 5, 5, 5);
