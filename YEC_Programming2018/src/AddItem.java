@@ -82,7 +82,7 @@ public class AddItem {
 		SpringUtilities.makeCompactGrid(p, numPairs, 2, 6, 6, 6, 6);
 
 		JFrame frame = new JFrame("SpringForm");
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		p.setOpaque(true); // content panes must be opaque
 		frame.setContentPane(box);
 
