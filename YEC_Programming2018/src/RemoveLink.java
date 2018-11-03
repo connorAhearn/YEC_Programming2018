@@ -28,7 +28,6 @@ public class RemoveLink {
 		currentSel = 0;
 
 		JComboBox patternList = new JComboBox(patternExamples);
-		patternList.setEditable(true);
 		patternList.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				currentPattern = patternList.getName();
